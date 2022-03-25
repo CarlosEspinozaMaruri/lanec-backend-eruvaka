@@ -22,5 +22,5 @@ app.get("/", async (req, res) => {
 app.listen(port, () => {
   setInterval(() => {
     eruvakaThief();
-  }, 5000);
+  }, 10000);
 });

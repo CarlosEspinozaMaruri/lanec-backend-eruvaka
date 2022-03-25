@@ -61,28 +61,31 @@ const letsGetInformation = async (accessToken) => {
 };
 
 const postData = async (params) => {
-  console.log(params);
-  let accessToken = (
-    await axios.post(
-      "https://lanecmovil.com:8447/WebAPI/api/login/authenticate",
-      {
-        Username: "sistemas",
-        Password: "Sistem@s64",
-      }
-    )
-  ).data;
+  try {
+    let accessToken = (
+      await axios.post(
+        "https://lanecmovil.com:8447/WebAPI/api/login/authenticate",
+        {
+          Username: "sistemas",
+          Password: "Sistem@s64",
+        }
+      )
+    ).data;
 
-  let config = {
-    headers: {
-      Authorization: accessToken,
-    },
-  };
+    let config = {
+      headers: {
+        Authorization: accessToken,
+      },
+    };
 
-  let prueba = await axios.post(
-    "https://lanecmovil.com:8447/WebAPI/api/spc/js?prmUsuario=jespinoza&prmTipo=50000",
-    params,
-    config
-  );
+    let prueba = await axios.post(
+      "https://lanecmovil.com:8447/WebAPI/api/spc/js?prmUsuario=jespinoza&prmTipo=50000",
+      params,
+      config
+    );
+  } catch (error) {
+    console.log(`Error: ${error}`);
+  }
 
   console.log(prueba.data);
 };
