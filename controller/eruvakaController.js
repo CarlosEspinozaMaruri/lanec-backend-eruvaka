@@ -19,6 +19,7 @@ export const eruvakaThief = async () => {
 
     letsGetInformation(accessToken);
   } catch (error) {
+    eruvakaThief();
     console.log(`Error: ${error}`);
   }
 };
@@ -64,6 +65,7 @@ const letsGetInformation = async (accessToken) => {
     });
     postData({ datos: oxygenAndTempObject });
   } catch (error) {
+    eruvakaThief();
     console.log(`Error: ${error}`);
   }
 };
@@ -95,5 +97,6 @@ const postData = async (params) => {
     console.log(prueba.data);
   } catch (error) {
     console.log(`Error: ${error}`);
+    eruvakaThief();
   }
 };
