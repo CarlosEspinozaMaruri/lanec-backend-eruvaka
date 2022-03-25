@@ -89,7 +89,7 @@ const postData = async (params) => {
     };
 
     let prueba = await axios.post(
-      "https://lanecmovil.com:8447/WebAPI/api/spc/js?prmUsuario=jespinoza&prmTipo=50000",
+      "https://lanecmovil.com:8447/WebAPI/api/spc/js?prmUsuario=api&prmTipo=50000",
       params,
       config
     );
