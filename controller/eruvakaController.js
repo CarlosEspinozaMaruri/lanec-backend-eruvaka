@@ -1,8 +1,5 @@
 import axios from "axios";
 
-let date = new Date().toJSON().split("T")[0];
-let time = new Date().toLocaleTimeString();
-
 export const eruvakaThief = async () => {
   try {
     let accessToken = (
@@ -25,6 +22,9 @@ export const eruvakaThief = async () => {
 };
 
 const letsGetInformation = async (accessToken) => {
+  let date = new Date().toJSON().split("T")[0];
+  let time = new Date().toLocaleTimeString();
+
   try {
     let config = {
       headers: {
@@ -89,7 +89,7 @@ const postData = async (params) => {
     };
 
     let prueba = await axios.post(
-      "https://lanecmovil.com:8447/WebAPI/api/spc/js?prmUsuario=api&prmTipo=50000",
+      "https://lanecmovil.com:8447/WebAPI/api/spc/js?prmUsuario=jespinoza&prmTipo=50000",
       params,
       config
     );
