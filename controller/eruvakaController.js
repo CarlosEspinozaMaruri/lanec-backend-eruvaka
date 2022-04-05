@@ -53,7 +53,7 @@ const letsGetInformation = async (accessToken) => {
         if (element._id === elementId._id) {
           oxygenAndTempObject.push({
             serialDispositivo: "",
-            timestamp: `${date} ${time}`,
+            // timestamp: `${date} ${time}`,
             oxigenomgl: element.data[0].dissolved_oxygen,
             oxigenoPorcentaje: 0,
             temperatura: element.data[0].temperature,
@@ -89,7 +89,7 @@ const postData = async (params) => {
     };
 
     let prueba = await axios.post(
-      "https://lanecmovil.com:8447/WebAPI/api/spc/js?prmUsuario=jespinoza&prmTipo=50000",
+      "https://lanecmovil.com:8447/WebAPI/api/spc/js?prmUsuario=api&prmTipo=50000",
       params,
       config
     );
